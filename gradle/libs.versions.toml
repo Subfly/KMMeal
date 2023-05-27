@@ -1,0 +1,124 @@
+[versions]
+#Compose
+composeVersion = "1.4.3"
+activityComposeVersion = "1.7.1"
+
+#Navigation
+navVersion = "2.5.3"
+
+#Material
+material3Version = "1.1.0-rc01"
+
+#Gradle
+androidGradlePluginVersion = "8.1.0-alpha08"
+
+#Realm
+realmVersion = "1.8.0"
+
+#Ktor
+ktorVersion = "2.2.4"
+
+#Coroutines
+ktxCoroutinesVersion = "1.7.0"
+nativeCoroutinesVersion = "1.0.0-ALPHA-9"
+
+#ViewModel
+kmmVmVersion = "1.0.0-ALPHA-8"
+
+#KSP
+kspVersion = "1.8.21-1.0.11"
+
+#Preferences
+datastoreVersion = "1.1.0-alpha04"
+
+#Dependency Injection
+koinVersion = "3.4.0"
+koinComposeVersion = "3.4.4"
+
+#Serialization
+kotlinxSerializationVersion = "1.5.0"
+
+#Coil
+coilVersion = "2.3.0"
+
+#Accompanist
+accompanistVersion = "0.30.1"
+
+#Splash API
+splashAPIVersion = "1.0.0"
+
+[libraries]
+#Compose
+compose-ui = {group = "androidx.compose.ui", name = "ui", version.ref = "composeVersion"}
+compose-ui-tooling = {group = "androidx.compose.ui", name = "ui-tooling", version.ref = "composeVersion"}
+compose-ui-tooling-preview = {group = "androidx.compose.ui", name = "ui-tooling-preview", version.ref = "composeVersion"}
+compose-foundation = {group = "androidx.compose.foundation", name = "foundation", version.ref = "composeVersion"}
+compose-material = {group = "androidx.compose.material", name = "material", version.ref = "composeVersion"}
+compose-material3 = {group = "androidx.compose.material3", name = "material3", version.ref = "material3Version"}
+activity-compose = {group = "androidx.activity", name = "activity-compose", version.ref = "activityComposeVersion"}
+
+#Navigation
+navigation-compose = {group = "androidx.navigation", name = "navigation-compose", version.ref = "navVersion"}
+
+#Realm
+realm-base = {group = "io.realm.kotlin", name = "library-base", version.ref = "realmVersion"}
+
+#Serializer
+kotlinx-serializer = {group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationVersion"}
+
+#Ktor
+ktor-core = {group = "io.ktor", name = "ktor-client-core", version.ref = "ktorVersion"}
+ktor-android = {group = "io.ktor", name = "ktor-client-android", version.ref = "ktorVersion"}
+ktor-ios = {group = "io.ktor", name = "ktor-client-ios", version.ref = "ktorVersion"}
+ktor-json-serializer = {group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktorVersion"}
+ktor-client-serializer = {group = "io.ktor", name = "ktor-client-serialization", version.ref = "ktorVersion"}
+ktor-logger = {group = "io.ktor", name = "ktor-client-logging", version.ref = "ktorVersion"}
+ktor-negotiator = {group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktorVersion"}
+
+#Coroutines
+ktx-coroutines-core = {group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "ktxCoroutinesVersion"}
+ktx-coroutines-android = {group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "ktxCoroutinesVersion"}
+
+#ViewModel
+kmm-viewmodel = {group = "com.rickclephas.kmm", name = "kmm-viewmodel-core", version.ref = "kmmVmVersion"}
+
+#Preferences
+datastore = {group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastoreVersion"}
+datastore-core = {group = "androidx.datastore", name = "datastore-preferences-core", version.ref = "datastoreVersion"}
+
+#Dependency Injection
+koin = {group = "io.insert-koin", name = "koin-core", version.ref = "koinVersion"}
+koin-test = {group = "io.insert-koin", name = "koin-test", version.ref = "koinVersion"}
+koin-android = {group = "io.insert-koin", name = "koin-android", version.ref = "koinVersion"}
+koin-compose = {group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koinComposeVersion"}
+
+#Coil
+coil = {group = "io.coil-kt", name = "coil-compose", version.ref = "coilVersion"}
+
+#Accompanist
+accompanist-system-ui = {group = "com.google.accompanist", name = "accompanist-systemuicontroller", version.ref = "accompanistVersion"}
+accompanist-placeholder = {group = "com.google.accompanist", name = "accompanist-placeholder", version.ref = "accompanistVersion"}
+
+#Slash API
+splash = {group = "androidx.core", name = "core-splashscreen", version.ref = "splashAPIVersion"}
+
+[plugins]
+#Gradle
+android-application = {id = "com.android.application", version.ref = "androidGradlePluginVersion"}
+android-library = {id = "com.android.library", version.ref = "androidGradlePluginVersion"}
+
+#Realm
+realm-base = {id = "io.realm.kotlin", version.ref = "realmVersion"}
+
+#Coroutines
+native-coroutines = {id = "com.rickclephas.kmp.nativecoroutines", version.ref = "nativeCoroutinesVersion"}
+
+#KSP
+ksp = {id = "com.google.devtools.ksp", version.ref = "kspVersion"}
+
+[bundles]
+compose = ["compose.ui", "compose.ui.tooling", "compose.ui.tooling.preview", "compose.foundation", "compose.material", "compose-material3", "activity.compose", "navigation-compose"]
+accompanist = ["accompanist-system-ui", "accompanist-placeholder"]
+ktor-shared = ["ktor.core", "ktor.json.serializer", "ktor.client.serializer", "ktor.logger", "ktor.negotiator", "kotlinx.serializer"]
+koin-shared = ["koin", "koin-test"]
+koin-android = ["koin", "koin-android", "koin-compose"]
